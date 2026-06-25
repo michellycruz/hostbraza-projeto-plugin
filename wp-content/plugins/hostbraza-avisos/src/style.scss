@@ -1,0 +1,86 @@
+.hbav-lista {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+
+.hbav-aviso {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+	padding: 14px 16px;
+	border-radius: 8px;
+	border-left: 4px solid #888;
+	background: #f6f7f7;
+	font-size: 15px;
+	line-height: 1.5;
+
+	&__titulo {
+		font-weight: 600;
+	}
+
+	&__mensagem {
+		color: #444;
+	}
+
+	&__vencimento {
+		font-size: 13px;
+		color: #666;
+	}
+
+	// Cores por severidade (borda + leve fundo).
+	&--info {
+		border-left-color: #2271b1;
+		background: #f0f6fc;
+	}
+
+	&--atencao {
+		border-left-color: #dba617;
+		background: #fcf9e8;
+	}
+
+	&--urgente {
+		border-left-color: #d63638;
+		background: #fcf0f1;
+	}
+}
+
+.hbav-barra {
+	margin-top: 6px;
+
+	&__trilho {
+		width: 100%;
+		height: 10px;
+		background: #e0e0e0;
+		border-radius: 5px;
+		overflow: hidden;
+	}
+
+	&__preenchimento {
+		height: 100%;
+		border-radius: 5px;
+		transition: width 0.3s ease;
+	}
+
+	&__rotulo {
+		display: inline-block;
+		margin-top: 4px;
+		font-size: 13px;
+		color: #555;
+	}
+
+	&--ok {
+		background: #00a32a;
+	}
+
+	&--alerta {
+		background: #dba617;
+	}
+
+	&--critico {
+		background: #d63638;
+	}
+}

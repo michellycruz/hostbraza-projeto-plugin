@@ -21,3 +21,13 @@ require_once plugin_dir_path( __FILE__ ) . 'includes/class-meta.php';
 require_once plugin_dir_path( __FILE__ ) . 'includes/class-avisos-fonte.php';
 
 require_once plugin_dir_path( __FILE__ ) . 'includes/class-admin-notice.php';
+
+require_once plugin_dir_path( __FILE__ ) . 'includes/class-meta-rest.php';
+
+/**
+ * Registra o bloco Gutenberg "Hostbraza Avisos".
+ */
+function hbav_register_block() {
+	register_block_type( plugin_dir_path( __FILE__ ) . 'build' );
+}
+add_action( 'init', 'hbav_register_block' );

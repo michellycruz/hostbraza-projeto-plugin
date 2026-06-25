@@ -33,6 +33,7 @@ function hbav_get_avisos() {
 			'tipo'       => get_post_meta( $post->ID, '_hbav_tipo', true ),
 			'severidade' => get_post_meta( $post->ID, '_hbav_severidade', true ),
 			'vencimento' => get_post_meta( $post->ID, '_hbav_vencimento', true ),
+			'percentual' => get_post_meta( $post->ID, '_hbav_percentual', true ),
 		);
 	}
 

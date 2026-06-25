@@ -1,0 +1,20 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "hostbraza/avisos-bloco",
+  "version": "0.1.0",
+  "title": "Hostbraza Avisos",
+  "category": "widgets",
+  "icon": "megaphone",
+  "description": "Exibe os avisos de hospedagem do cliente em uma página ou post.",
+  "example": {},
+  "supports": {
+    "html": false
+  },
+  "textdomain": "hostbraza-avisos",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php",
+  "viewScript": "file:./view.js"
+}
