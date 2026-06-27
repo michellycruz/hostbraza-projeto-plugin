@@ -45,6 +45,20 @@ Toda a leitura de avisos passa por uma única função (`hbav_get_avisos()`), o 
 
 ---
 
+## Demonstração
+
+### Banner no painel administrativo
+Avisos exibidos no topo do painel, com cor por severidade e barra de uso de disco.
+
+![Banner de avisos no painel administrativo](assets/banner-painel.png)
+
+### Notificações no site (toasts)
+Notificações flutuantes no canto inferior direito, visíveis apenas para administradores, com botão de acesso ao WhatsApp do suporte.
+
+![Toasts de aviso no site](assets/toasts-site.png)
+
+---
+
 ## Requisitos
 
 - WordPress 6.5 ou superior
