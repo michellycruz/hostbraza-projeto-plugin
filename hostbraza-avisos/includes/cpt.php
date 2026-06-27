@@ -16,12 +16,15 @@ function hbav_register_aviso_cpt() {
 
 	$args = array(
 		'labels'       => $labels,
-		'public'       => true,
+		'public'       => false,
+		'show_ui'      => true,
 		'show_in_menu' => true,
 		'menu_icon'    => 'dashicons-megaphone',
 		'supports'     => array( 'title', 'editor' ),
 		'show_in_rest' => true,
 		'has_archive'  => false,
+		'publicly_queryable' => false,
+		'exclude_from_search'=> true,
 	);
 
 	register_post_type( 'hbav_aviso', $args );

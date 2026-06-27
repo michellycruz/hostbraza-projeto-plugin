@@ -50,12 +50,12 @@ Toda a leitura de avisos passa por uma única função (`hbav_get_avisos()`), o 
 ### Banner no painel administrativo
 Avisos exibidos no topo do painel, com cor por severidade e barra de uso de disco.
 
-![Banner de avisos no painel administrativo](hostbraza-avisos/assets/banner-painel.png.png)
+![Banner de avisos no painel administrativo](hostbraza-avisos/assets/banner-painel.png)
 
 ### Notificações no site (toasts)
 Notificações flutuantes no canto inferior direito, visíveis apenas para administradores do site (manage_options), com botão de acesso ao WhatsApp do suporte.
 
-![Toasts de aviso no site](hostbraza-avisos/assets/toasts-site.png.png)
+![Toasts de aviso no site](hostbraza-avisos/assets/toasts-site.png)
 
 ---
 

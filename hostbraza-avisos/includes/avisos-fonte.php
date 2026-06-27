@@ -144,8 +144,18 @@ function hbav_get_avisos_api() {
 	$avisos = array();
 
 	foreach ( $dados as $item ) {
+		// Gera um ID estável: usa o id da API se houver; senão, cria uma
+		// "impressão digital" do conteúdo para que o mesmo aviso tenha
+		// sempre o mesmo ID (necessário para o "fechar pelo dia" do toast).
+		if ( isset( $item['id'] ) ) {
+			$id = 'api-' . $item['id'];
+		} else {
+			$assinatura = ( $item['titulo'] ?? '' ) . '|' . ( $item['tipo'] ?? '' ) . '|' . ( $item['vencimento'] ?? '' );
+			$id         = 'api-' . md5( $assinatura );
+		}
+
 		$avisos[] = array(
-			'id'         => 'api-' . ( $item['id'] ?? uniqid() ),
+			'id'         => $id,
 			'titulo'     => $item['titulo'] ?? '',
 			'mensagem'   => $item['mensagem'] ?? '',
 			'tipo'       => $item['tipo'] ?? '',
