@@ -68,7 +68,7 @@ function hbav_render_meta_box( $post ) {
 // 3. Salva os dados com segurança.
 function hbav_salvar_meta( $post_id ) {
 	// Verifica o nonce.
-	if ( ! isset( $_POST['hbav_nonce'] ) || ! wp_verify_nonce( $_POST['hbav_nonce'], 'hbav_salvar_detalhes' ) ) {
+	if ( ! isset( $_POST['hbav_nonce'] ) || ! wp_verify_nonce( wp_unslash( $_POST['hbav_nonce'] ), 'hbav_salvar_detalhes' ) ) {
 		return;
 	}
 	// Não salva durante autosave.
@@ -79,23 +79,29 @@ function hbav_salvar_meta( $post_id ) {
 	if ( ! current_user_can( 'edit_post', $post_id ) ) {
 		return;
 	}
-	// Tipo: só aceita valores da lista permitida.
+	// Tipo: sanitiza e só aceita valores da lista permitida.
 	$tipos_validos = array( 'dominio', 'conta', 'disco' );
-	if ( isset( $_POST['hbav_tipo'] ) && in_array( $_POST['hbav_tipo'], $tipos_validos, true ) ) {
-		update_post_meta( $post_id, '_hbav_tipo', $_POST['hbav_tipo'] );
+	if ( isset( $_POST['hbav_tipo'] ) ) {
+		$tipo = sanitize_text_field( wp_unslash( $_POST['hbav_tipo'] ) );
+		if ( in_array( $tipo, $tipos_validos, true ) ) {
+			update_post_meta( $post_id, '_hbav_tipo', $tipo );
+		}
 	}
 	// Severidade: idem.
 	$sev_validas = array( 'info', 'atencao', 'urgente' );
-	if ( isset( $_POST['hbav_severidade'] ) && in_array( $_POST['hbav_severidade'], $sev_validas, true ) ) {
-		update_post_meta( $post_id, '_hbav_severidade', $_POST['hbav_severidade'] );
+	if ( isset( $_POST['hbav_severidade'] ) ) {
+		$severidade = sanitize_text_field( wp_unslash( $_POST['hbav_severidade'] ) );
+		if ( in_array( $severidade, $sev_validas, true ) ) {
+			update_post_meta( $post_id, '_hbav_severidade', $severidade );
+		}
 	}
 	// Vencimento: sanitiza como texto simples.
 	if ( isset( $_POST['hbav_vencimento'] ) ) {
-		update_post_meta( $post_id, '_hbav_vencimento', sanitize_text_field( $_POST['hbav_vencimento'] ) );
+		update_post_meta( $post_id, '_hbav_vencimento', sanitize_text_field( wp_unslash( $_POST['hbav_vencimento'] ) ) );
 	}
 	// Percentual: garante número inteiro entre 0 e 100.
 	if ( isset( $_POST['hbav_percentual'] ) && '' !== $_POST['hbav_percentual'] ) {
-		$percentual = absint( $_POST['hbav_percentual'] );
+		$percentual = absint( wp_unslash( $_POST['hbav_percentual'] ) );
 		$percentual = min( 100, $percentual );
 		update_post_meta( $post_id, '_hbav_percentual', $percentual );
 	} else {

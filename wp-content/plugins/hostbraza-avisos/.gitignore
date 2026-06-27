@@ -1,0 +1,19 @@
+# Dependências do Node (geradas por npm install, nunca versionar)
+node_modules/
+
+# Artefatos de build do bloco
+build/
+
+# Arquivos de configuração de editores
+.vscode/
+.idea/
+
+# Arquivos do sistema operacional
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Arquivos de ambiente / segredos (nunca subir credenciais)
+.env
