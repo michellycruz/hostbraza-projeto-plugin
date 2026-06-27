@@ -95,12 +95,12 @@ O aviso passará a aparecer automaticamente no banner do painel e no toast do si
 hostbraza-avisos/
 ├── hostbraza-avisos.php           # Arquivo principal: cabeçalho e carregamento dos módulos
 ├── includes/
-│   ├── class-cpt.php              # Registra o Custom Post Type "Aviso"
-│   ├── class-meta.php             # Campos personalizados + salvamento seguro (nonce, sanitização)
-│   ├── class-avisos-fonte.php     # Fonte única de dados (manual + API) — coração da arquitetura
-│   ├── class-admin-notice.php     # Banner de avisos no painel administrativo
-│   ├── class-meta-rest.php        # Expõe os campos do aviso na API REST
-│   └── class-toast.php            # Toast flutuante no site (apenas admin) + link de WhatsApp
+│   ├── cpt.php              # Registra o Custom Post Type "Aviso"
+│   ├── meta.php             # Campos personalizados + salvamento seguro (nonce, sanitização)
+│   ├── avisos-fonte.php     # Fonte única de dados (manual + API) — coração da arquitetura
+│   ├── admin-notice.php     # Banner de avisos no painel administrativo
+│   ├── meta-rest.php        # Expõe os campos do aviso na API REST
+│   └── toast.php            # Toast flutuante no site (apenas admin) + link de WhatsApp
 ├── README.md                      # Esta documentação
 └── readme.txt                     # Documentação no formato do repositório WordPress
 ```
@@ -109,12 +109,12 @@ hostbraza-avisos/
 
 ## Configurando a integração com a API
 
-A camada de API fica no arquivo **`includes/class-avisos-fonte.php`**, no bloco de configuração no topo. Por padrão, a integração está **desativada** e o plugin usa apenas o cadastro manual.
+A camada de API fica no arquivo **`includes/avisos-fonte.php`**, no bloco de configuração no topo. Por padrão, a integração está **desativada** e o plugin usa apenas o cadastro manual.
 
 Para ativar a integração quando a API da Hostbraza estiver disponível, edite as constantes:
 
 ```php
-// includes/class-avisos-fonte.php
+// includes/avisos-fonte.php
 
 define( 'HBAV_API_ATIVA', true );                                  // Liga a integração
 define( 'HBAV_API_URL', 'https://api.hostbraza.com.br/avisos' );   // Endereço da API
