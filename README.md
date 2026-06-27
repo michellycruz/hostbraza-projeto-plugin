@@ -1,6 +1,6 @@
 # Hostbraza Avisos
 
-Plugin WordPress que exibe avisos de hospedagem (domínio expirando, conta a vencer, disco cheio) para o administrador do site, tanto em um banner no painel quanto em notificações flutuantes (*toasts*) no site. Foi construído com uma arquitetura preparada para, no futuro, consumir avisos diretamente de uma API externa da Hostbraza, mantendo também o cadastro manual.
+Plugin WordPress que exibe avisos de hospedagem (domínio expirando, conta a vencer, disco cheio) para o administrador do site, tanto em um banner no painel quanto em notificações flutuantes (*toasts*) no site. Foi construído com uma arquitetura preparada para consumir avisos diretamente de uma API externa da Hostbraza, mantendo também o cadastro manual.
 
 ---
 
