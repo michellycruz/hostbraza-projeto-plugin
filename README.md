@@ -53,7 +53,7 @@ Avisos exibidos no topo do painel, com cor por severidade e barra de uso de disc
 ![Banner de avisos no painel administrativo](hostbraza-avisos/assets/banner-painel.png.png)
 
 ### Notificações no site (toasts)
-Notificações flutuantes no canto inferior direito, visíveis apenas para administradores, com botão de acesso ao WhatsApp do suporte.
+Notificações flutuantes no canto inferior direito, visíveis apenas para administradores do site (manage_options), com botão de acesso ao WhatsApp do suporte.
 
 ![Toasts de aviso no site](hostbraza-avisos/assets/toasts-site.png.png)
 
